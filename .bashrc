@@ -119,3 +119,17 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 export PATH=$HOME/.local/bin:$PATH
 alias config='git --git-dir=/home/orn/.cfg/ --work-tree=/home/orn'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Enable rvm: ruby version manager
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Display the current RVM ruby selection
+#PS1="\$(/usr/local/rvm/bin/rvm-prompt) $PS1"
+
+# RVM bash completion
+#[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
+
+#Enable vim-editing in bash shell
+set -o vi 
