@@ -28,8 +28,8 @@ font pango:Monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec terminology
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -192,8 +192,8 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Media player controls
 bindcode 172 exec playerctl play-pause
@@ -209,7 +209,8 @@ bindsym Control+Shift+Right exec playerctl next
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
 
 #set background image
-exec --no-startup-id "feh --bg-scale ~/Pictures/ebkogeg.jpg"
+exec --no-startup-id "feh --bg-scale ~/Pictures/splash.png"
+#exec --no-startup-id "feh --bg-scale ~/Pictures/ebkogeg.jpg"
 
 #on startup remap capsloc to escape
 exec --no-startup-id setxkbmap -option caps:escape
@@ -221,7 +222,7 @@ bindsym $mod+i exec "setxkbmap -model pc105 -layout us,is -option grp:alt_shift_
 exec  "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1"
 
 #start network manager to connect to wifi
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 #start dropbox
 #exec --no-startup-id dropbox start
